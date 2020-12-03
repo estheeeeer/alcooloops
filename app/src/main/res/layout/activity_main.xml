@@ -8,24 +8,60 @@
     tools:context=".MainActivity">
 
     <LinearLayout
+        android:id="@+id/bests"
         android:orientation="vertical"
         android:layout_width="0sp"
         android:layout_height="match_parent"
         android:layout_weight="0.6">
         <TextView
-            android:layout_width="100sp"
-            android:layout_height="50sp"
+            android:layout_width="90sp"
+            android:layout_height="90sp"
+            android:gravity="center"
             android:textColor="@color/black"
             android:textSize="30sp"
-            android:text="OUI"/>
+            android:text="BEST"/>
 
     </LinearLayout>
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="0sp"
         android:layout_height="match_parent"
-        android:layout_weight="2">
+        android:layout_weight="2"
+        android:gravity="center">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="200sp"
+                android:layout_height="50sp"
+                android:hint="Nom produit"/>
+            <EditText
+                android:id="@+id/alcool"
+                android:layout_width="200sp"
+                android:layout_height="50sp"
+                android:layout_marginTop="15sp"
+                android:hint="Alcool %"/>
+            <EditText
+                android:id="@+id/price"
+                android:layout_width="200sp"
+                android:layout_height="50sp"
+                android:layout_marginTop="15sp"
+                android:hint="Prix"/>
+            <EditText
+                android:id="@+id/shop"
+                android:layout_width="200sp"
+                android:layout_height="50sp"
+                android:layout_marginTop="15sp"
+                android:hint="Magasin"/>
+        </LinearLayout>
 
+        <Button
+            android:id="@+id/buttonv"
+            android:layout_width="50sp"
+            android:layout_height="50sp"
+            android:layout_marginTop="15sp"/>
     </LinearLayout>
 
 </LinearLayout>
