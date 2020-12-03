@@ -17,19 +17,23 @@
             android:id="@+id/home"
             android:layout_width="65sp"
             android:layout_height="65sp"
-            android:src="@drawable/ic_baseline_home_24"
+            app:srcCompat="@drawable/ic_baseline_home_24"
             android:padding="5dp"
             android:adjustViewBounds="true"
             android:scaleType="center"
             android:background="@color/black"/>
+        <Button
+            android:id="@+id/buttonm"
+            android:layout_width="65sp"
+            android:layout_height="65sp"/>
 
     </LinearLayout>
-    <fragment
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment"
         android:orientation="vertical"
         android:layout_width="0sp"
         android:layout_height="match_parent"
         android:layout_weight="2"
-        android:gravity="center"
-        android:name="fr.estheeer.alcooloops.AFragment"/>
+        android:gravity="center"/>
 
 </LinearLayout>

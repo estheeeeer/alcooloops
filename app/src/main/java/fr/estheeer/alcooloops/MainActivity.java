@@ -1,43 +1,70 @@
 package fr.estheeer.alcooloops;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.Layout;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-
-    private Double price,alcool;
-
+    private String[] magasins = new String[5];
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button button = findViewById(R.id.buttonv);
-        button.setOnClickListener(this);
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .setReorderingAllowed(true)
+                    .add(R.id.fragment, AFragment.class, null)
+                    .commit();
         }
+        ViewGroup viewscroll = findViewById(R.id.scroll);
+        magasins[0]="Casino";
+        magasins[1]="Lidl";
+        magasins[2]="LeaderPrice";
+        magasins[3]="G20";
+        magasins[4]="Franprix";
+        for(int i=0; i<5; i++) {
+            Button bm = new Button(this);
+            bm.setLayoutParams(new LinearLayout.LayoutParams(195, 195));
+            viewscroll.addView(bm);
+            bm.setId(i);
+            Button button = super.findViewById(i);
+            button.setOnClickListener(this);
+        }
+        ImageButton buttonhome = new ImageButton(this);
+        buttonhome = super.findViewById(R.id.home);
+        buttonhome.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                AFragment fragment = new AFragment();
+                FragmentManager fm = getSupportFragmentManager();
+                FragmentTransaction transaction = fm.beginTransaction();
+                transaction.replace(R.id.fragment, fragment);
+                transaction.commit();
+            }
+        });
+    }
+
     @Override
-    public void onClick(View v) {
-        EditText edn = findViewById(R.id.name);
-        EditText eda = findViewById(R.id.alcool);
-        EditText edp = findViewById(R.id.price);
-        String name = edn.getText().toString();
-        String prices = edp.getText().toString();
-        String alcools = eda.getText().toString();
-        EditText eds = findViewById(R.id.shop);
-        String shop = eds.getText().toString();
-        try {
-            price = Double.parseDouble(prices);
-            alcool = Double.parseDouble(alcools);
-        }catch (Exception e){
-            Toast.makeText(this, "Un nombre est requis", Toast.LENGTH_LONG).show();
-        }
-        if(shop.isEmpty()||name.isEmpty()||prices.isEmpty()||alcools.isEmpty()){
-            Toast.makeText(this, "Veuillez remplir tous les champs", Toast.LENGTH_LONG).show();
-        }
-        System.out.println("Name = "+name+" alcool = "+alcools+" Price = "+prices+"Shop = "+shop);
+    public void onClick(View view) {
+        System.out.println("--------------------------------magasins[view.getId()] = "+magasins[view.getId()]+"-------------------------------------");
+        SFragment fragment = new SFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString("nmagasins", magasins[view.getId()]);
+        fragment.setArguments(bundle);
+        FragmentManager fm = getSupportFragmentManager();
+        FragmentTransaction transaction = fm.beginTransaction();
+        transaction.replace(R.id.fragment, fragment);
+        transaction.commit();
+
     }
 }
