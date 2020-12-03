@@ -27,14 +27,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String name = edn.getText().toString();
         String prices = edp.getText().toString();
         String alcools = eda.getText().toString();
+        EditText eds = findViewById(R.id.shop);
+        String shop = eds.getText().toString();
         try {
             price = Double.parseDouble(prices);
             alcool = Double.parseDouble(alcools);
         }catch (Exception e){
             Toast.makeText(this, "Un nombre est requis", Toast.LENGTH_LONG).show();
         }
-        EditText eds = findViewById(R.id.shop);
-        String shop = eds.getText().toString();
+        if(shop.isEmpty()||name.isEmpty()||prices.isEmpty()||alcools.isEmpty()){
+            Toast.makeText(this, "Veuillez remplir tous les champs", Toast.LENGTH_LONG).show();
+        }
         System.out.println("Name = "+name+" alcool = "+alcools+" Price = "+prices+"Shop = "+shop);
     }
 }

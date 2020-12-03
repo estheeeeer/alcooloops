@@ -8,60 +8,28 @@
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:id="@+id/bests"
+        android:id="@+id/scroll"
         android:orientation="vertical"
         android:layout_width="0sp"
         android:layout_height="match_parent"
-        android:layout_weight="0.6">
-        <TextView
-            android:layout_width="90sp"
-            android:layout_height="90sp"
-            android:gravity="center"
-            android:textColor="@color/black"
-            android:textSize="30sp"
-            android:text="BEST"/>
+        android:layout_weight="0.4">
+        <ImageButton
+            android:id="@+id/home"
+            android:layout_width="65sp"
+            android:layout_height="65sp"
+            android:src="@drawable/ic_baseline_home_24"
+            android:padding="5dp"
+            android:adjustViewBounds="true"
+            android:scaleType="center"
+            android:background="@color/black"/>
 
     </LinearLayout>
-    <LinearLayout
+    <fragment
         android:orientation="vertical"
         android:layout_width="0sp"
         android:layout_height="match_parent"
         android:layout_weight="2"
-        android:gravity="center">
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <EditText
-                android:id="@+id/name"
-                android:layout_width="200sp"
-                android:layout_height="50sp"
-                android:hint="Nom produit"/>
-            <EditText
-                android:id="@+id/alcool"
-                android:layout_width="200sp"
-                android:layout_height="50sp"
-                android:layout_marginTop="15sp"
-                android:hint="Alcool %"/>
-            <EditText
-                android:id="@+id/price"
-                android:layout_width="200sp"
-                android:layout_height="50sp"
-                android:layout_marginTop="15sp"
-                android:hint="Prix"/>
-            <EditText
-                android:id="@+id/shop"
-                android:layout_width="200sp"
-                android:layout_height="50sp"
-                android:layout_marginTop="15sp"
-                android:hint="Magasin"/>
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/buttonv"
-            android:layout_width="50sp"
-            android:layout_height="50sp"
-            android:layout_marginTop="15sp"/>
-    </LinearLayout>
+        android:gravity="center"
+        android:name="fr.estheeer.alcooloops.AFragment"/>
 
 </LinearLayout>
