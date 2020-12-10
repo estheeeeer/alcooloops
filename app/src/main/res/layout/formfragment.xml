@@ -1,44 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center">
-    <EditText
-        android:id="@+id/name"
-        android:layout_width="200sp"
-        android:layout_height="50sp"
-        android:textSize="20sp"
-        android:textColorHint="@color/white"
-        android:hint="Nom produit"/>
-    <EditText
-        android:id="@+id/alcool"
-        android:layout_width="200sp"
-        android:layout_height="50sp"
-        android:layout_marginTop="15sp"
-        android:textSize="20sp"
-        android:textColorHint="@color/white"
-        android:hint="Alcool %"/>
-    <EditText
-        android:id="@+id/price"
-        android:layout_width="200sp"
-        android:layout_height="50sp"
-        android:layout_marginTop="15sp"
-        android:textSize="20sp"
-        android:textColorHint="@color/white"
-        android:hint="Prix"/>
-    <EditText
-        android:id="@+id/shop"
-        android:layout_width="200sp"
-        android:layout_height="50sp"
-        android:layout_marginTop="15sp"
-        android:textSize="20sp"
-        android:textColorHint="@color/white"
-        android:hint="Magasin"/>
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/formlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
 
-    <Button
-        android:id="@+id/buttonv"
-        android:layout_width="50sp"
-        android:layout_height="50sp"
-        android:layout_marginTop="15sp"/>
-</LinearLayout>
+        <ImageView
+            android:id="@+id/photoview"
+            android:layout_width="250sp"
+            android:layout_height="400sp"
+            android:layout_marginTop="20sp"
+            android:layout_marginBottom="20sp"/>
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="200sp"
+            android:layout_height="50sp"
+            android:textSize="20sp"
+            android:textColorHint="@color/whiteo"
+            android:hint="Nom produit"/>
+        <EditText
+            android:id="@+id/alcool"
+            android:layout_width="200sp"
+            android:layout_height="50sp"
+            android:layout_marginTop="15sp"
+            android:textSize="20sp"
+            android:textColorHint="@color/whiteo"
+            android:hint="Alcool %"/>
+        <EditText
+            android:id="@+id/price"
+            android:layout_width="200sp"
+            android:layout_height="50sp"
+            android:layout_marginTop="15sp"
+            android:textSize="20sp"
+            android:textColorHint="@color/whiteo"
+            android:hint="Prix"/>
+        <EditText
+            android:id="@+id/volume"
+            android:layout_width="200sp"
+            android:layout_height="50sp"
+            android:layout_marginTop="15sp"
+            android:textSize="20sp"
+            android:textColorHint="@color/whiteo"
+            android:hint="Volume cl"/>
+        <EditText
+            android:id="@+id/shop"
+            android:layout_width="200sp"
+            android:layout_height="50sp"
+            android:layout_marginTop="15sp"
+            android:textSize="20sp"
+            android:textColorHint="@color/whiteo"
+            android:hint="Magasin"/>
+        <Button
+            android:id="@+id/photoadd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:textSize="20sp"
+            android:text="@string/photoadd"/>
+
+        <Button
+            android:id="@+id/buttonv"
+            android:layout_width="50sp"
+            android:layout_height="50sp"
+            android:layout_marginTop="15sp"
+            android:textSize="25sp"
+            android:text="V"/>
+
+    </LinearLayout>
+</ScrollView>

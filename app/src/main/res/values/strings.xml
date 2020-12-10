@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Alcooloops</string>
+    <string name="todaytaste">Quelle est votre préférence du jour ?</string>
+    <string name="photoadd">Ajouter une photo</string>
 </resources>

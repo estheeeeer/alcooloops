@@ -25,7 +25,9 @@
         <Button
             android:id="@+id/buttonm"
             android:layout_width="65sp"
-            android:layout_height="65sp"/>
+            android:layout_height="65sp"
+            android:textSize="30sp"
+            android:text="C"/>
 
     </LinearLayout>
     <androidx.fragment.app.FragmentContainerView

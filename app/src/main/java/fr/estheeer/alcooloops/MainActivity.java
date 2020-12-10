@@ -24,15 +24,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .setReorderingAllowed(true)
-                    .add(R.id.fragment, AFragment.class, null)
+                    .add(R.id.fragment, AFragment.class,new Bundle() )
                     .commit();
         }
+
         ViewGroup viewscroll = findViewById(R.id.scroll);
         magasins[0]="Casino";
         magasins[1]="Lidl";
         magasins[2]="LeaderPrice";
         magasins[3]="G20";
         magasins[4]="Franprix";
+
+
         for(int i=0; i<5; i++) {
             Button bm = new Button(this);
             bm.setLayoutParams(new LinearLayout.LayoutParams(195, 195));
@@ -40,12 +43,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             bm.setId(i);
             Button button = super.findViewById(i);
             button.setOnClickListener(this);
+            button.setTextSize(40);
+            button.setText(""+magasins[i].charAt(0));
         }
         ImageButton buttonhome = new ImageButton(this);
         buttonhome = super.findViewById(R.id.home);
         buttonhome.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                //AFragment fragment = new AFragment();
                 AFragment fragment = new AFragment();
+                Bundle bundle = new Bundle();
+                fragment.setArguments(bundle);
                 FragmentManager fm = getSupportFragmentManager();
                 FragmentTransaction transaction = fm.beginTransaction();
                 transaction.replace(R.id.fragment, fragment);
@@ -56,7 +64,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-        System.out.println("--------------------------------magasins[view.getId()] = "+magasins[view.getId()]+"-------------------------------------");
         SFragment fragment = new SFragment();
         Bundle bundle = new Bundle();
         bundle.putString("nmagasins", magasins[view.getId()]);

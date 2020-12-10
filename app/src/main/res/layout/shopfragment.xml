@@ -6,9 +6,12 @@
     android:layout_height="match_parent"
     android:gravity="center">
     <TextView
-        android:id="@+id/namem"
+        android:id="@+id/namemagasin"
+        android:layout_width="wrap_content"
+        android:layout_height="80sp"
+        android:textSize="50sp"/>
+    <ListView
+        android:id="@+id/listproducts"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textSize="100sp"
-        android:text=""/>
+        android:layout_height="match_parent"/>
 </LinearLayout>
